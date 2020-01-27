@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "demo": "http-server ./"
+    "demo": "parcel ./demo/index.html -d build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
     "eslint": "^6.8.0",
-    "http-server": "^0.12.1",
+    "parcel-bundler": "^1.12.4",
     "typescript": "^3.7.5"
   }
 }

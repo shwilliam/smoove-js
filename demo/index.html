@@ -2,20 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
   <title>Smoove JS</title>
+
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    [role="img"] {
+      font-size: 3rem;
+    }
+
+    [data-x-pos="left"] {
+      position: relative;
+      right: 50px;
+    }
+
+    [data-x-pos="right"] {
+      position: relative;
+      left: 50px;
+    }
+
+    [data-y-pos="up"] {
+      position: relative;
+      bottom: 50px;
+    }
+
+    [data-y-pos="down"] {
+      position: relative;
+      top: 50px;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Smoove JS</h1>
+
+    <button id="button-x">x</button>
+    <button id="button-y">y</button>
   </header>
 
-  <main>
+  <main class="container">
+    <div id="dino" data-x-pos="" data-y-pos="">
+      <span role="img" aria-label="Dino">
+        🦕
+      </span>
+    </div>
   </main>
 
-  <script src="../dist/index.js"></script>
+  <script
+    type="text/javascript"
+    src="./main.js"
+  ></script>
 </body>
 </html>
