@@ -5,10 +5,28 @@
   <title>Smoove JS</title>
 
   <style>
-    .container {
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    fieldset {
+      border: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .layout {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 40px;
+    }
+
+    .container {
+      border: 2px solid blue;
+      padding: 10px;
     }
 
     [role="img"] {
@@ -38,17 +56,22 @@
 </head>
 <body>
   <header>
-    <h1>Smoove JS</h1>
-
-    <button id="button-x">x</button>
-    <button id="button-y">y</button>
+    <fieldset>
+      <legend>Transitions:</legend>
+      <button id="btn-dino-x">dino x</button>
+      <button id="btn-dino-y">dino y</button>
+      <button id="btn-container-x">container x</button>
+      <button id="btn-both">container and dino</button>
+    </fieldset>
   </header>
 
-  <main class="container">
-    <div id="dino" data-x-pos="" data-y-pos="">
-      <span role="img" aria-label="Dino">
-        🦕
-      </span>
+  <main class="layout">
+    <div id="dino-container" class="container" data-x-pos="">
+      <div id="dino" class="container" data-x-pos="" data-y-pos="">
+        <span role="img" aria-label="Dino">
+          🦕
+        </span>
+      </div>
     </div>
   </main>
 
