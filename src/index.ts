@@ -53,4 +53,5 @@ const measure = (el: HTMLElement): IRetVal => ({
   animate: cb => animate(el, el.getBoundingClientRect(), cb)
 })
 
-export { init }
+export {init}
+export default {init}

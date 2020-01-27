@@ -1,4 +1,4 @@
-import * as smoove from '../dist/index.js'
+import smoove from '../dist/index.js'
 
 const dino = document.getElementById('dino')
 const dinoContainer = document.getElementById('dino-container')
