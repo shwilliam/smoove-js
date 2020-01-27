@@ -10,109 +10,78 @@ const btnBoth = document.getElementById('btn-both')
 const dinoAnim = smoove.init(dino)
 const dinoContainerAnim = smoove.init(dinoContainer)
 
-btnDinoX.addEventListener('click', () => {
-  dinoAnim.measure()
+const moveDinoLeft = () => (dino.dataset.xPos = 'left')
+const moveDinoRight = () => (dino.dataset.xPos = 'right')
+const moveDinoUp = () => (dino.dataset.yPos = 'up')
+const moveDinoDown = () => (dino.dataset.yPos = 'down')
+const moveContainerLeft = () => (dinoContainer.dataset.xPos = 'left')
+const moveContainerRight = () =>
+  (dinoContainer.dataset.xPos = 'right')
 
+btnDinoX.addEventListener('click', () => {
   switch (dino.dataset.xPos) {
     case 'right':
-      dinoAnim.animate(() => {
-        dino.dataset.xPos = 'left'
-      })
+      dinoAnim.animate(moveDinoLeft)
       break
     case 'left':
-      dinoAnim.animate(() => {
-        dino.dataset.xPos = 'right'
-      })
+      dinoAnim.animate(moveDinoRight)
       break
     default:
-      dinoAnim.animate(() => {
-        dino.dataset.xPos = 'right'
-      })
+      dinoAnim.animate(moveDinoRight)
       break
   }
 })
 
 btnDinoY.addEventListener('click', () => {
-  dinoAnim.measure()
-
   switch (dino.dataset.yPos) {
     case 'up':
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'down'
-      })
+      dinoAnim.animate(moveDinoDown)
       break
     case 'down':
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'up'
-      })
+      dinoAnim.animate(moveDinoUp)
       break
     default:
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'down'
-      })
+      dinoAnim.animate(moveDinoDown)
       break
   }
 })
 
 btnContainerX.addEventListener('click', () => {
-  dinoContainerAnim.measure()
-
   switch (dinoContainer.dataset.xPos) {
     case 'right':
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'left'
-      })
+      dinoContainerAnim.animate(moveContainerLeft)
       break
     case 'left':
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'right'
-      })
+      dinoContainerAnim.animate(moveContainerRight)
       break
     default:
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'right'
-      })
+      dinoContainerAnim.animate(moveContainerRight)
       break
   }
 })
 
 btnBoth.addEventListener('click', () => {
-  dinoAnim.measure()
-  dinoContainerAnim.measure()
-
   switch (dino.dataset.yPos) {
     case 'up':
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'down'
-      })
+      dinoAnim.animate(moveDinoDown)
       break
     case 'down':
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'up'
-      })
+      dinoAnim.animate(moveDinoUp)
       break
     default:
-      dinoAnim.animate(() => {
-        dino.dataset.yPos = 'down'
-      })
+      dinoAnim.animate(moveDinoDown)
       break
   }
 
   switch (dinoContainer.dataset.xPos) {
     case 'right':
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'left'
-      })
+      dinoContainerAnim.animate(moveContainerLeft)
       break
     case 'left':
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'right'
-      })
+      dinoContainerAnim.animate(moveContainerRight)
       break
     default:
-      dinoContainerAnim.animate(() => {
-        dinoContainer.dataset.xPos = 'right'
-      })
+      dinoContainerAnim.animate(moveContainerRight)
       break
   }
 })
