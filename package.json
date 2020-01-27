@@ -1,7 +1,7 @@
 {
   "name": "smoove-js",
   "version": "0.1.0",
-  "description": "",
+  "description": "FLIP animation helper library",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -12,7 +12,9 @@
     "url": "git+https://github.com/shwilliam/smoove-js.git"
   },
   "keywords": [
-    "flip"
+    "flip",
+    "animation",
+    "javascript"
   ],
   "author": "William L <w-lindvall@outlook.com>",
   "license": "MIT",
