@@ -47,15 +47,16 @@ Initializes a new animation.
 
 Measures the current position of target element.
 
-### `<AnimObj>.animate(cb) => <AnimObj>`
+### `<AnimObj>.animate(stylingFn, animationOpts) => <AnimObj>`
 
 Animates target element from bounds (based on previous measure or init) to bounds after callback.
 
 #### Props
 
-| Name | Type    | Required | Description                          |
-| ---- | ------- | :------: | ------------------------------------ |
-| cb   | funtion |    ✅    | Function that performs style changes |
+| Name          | Type    | Required | Description                                                                                                             |
+| ------------- | ------- | :------: | ----------------------------------------------------------------------------------------------------------------------- |
+| stylingFn     | funtion |    ✅    | Function that performs style changes                                                                                    |
+| animationOpts | obj     |    ❌    | Object describing transition (see [docs](https://shwilliam.github.io/smoove-js/interfaces/_index_.ianimationopts.html)) |
 
 ## Contributing
 
