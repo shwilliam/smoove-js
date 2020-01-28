@@ -3,23 +3,26 @@ interface IRetVal {
   animate: TAnimate,
 }
 type TMeasure = () => IRetVal
-type TAnimate = (cb: () => any) => IRetVal
+type TAnimate = (
+  stylingFn: () => any,
+  newEl?: HTMLElement
+) => IRetVal
 
 const init = (el: HTMLElement): IRetVal => ({
   measure: () => measure(el),
-  animate: cb => animate(
-    el,
+  animate: (stylingFn, newEl) => animate(
+    newEl || el,
     el.getBoundingClientRect(),
-    cb
+    stylingFn,
   ),
 })
 
 const animate = (
   el: HTMLElement,
   initialBounds: ClientRect,
-  cb: () => any,
+  stylingFn: () => any,
 ) : IRetVal => {
-  cb() // layout change
+  stylingFn() // layout change
 
   const finalBounds: ClientRect = el.getBoundingClientRect()
   const deltaX: number = initialBounds.left - finalBounds.left
@@ -28,29 +31,37 @@ const animate = (
   const deltaH: number = initialBounds.height / finalBounds.height
 
   el.animate([{
-    transformOrigin: 'top left',
+    transformOrigin: 'top left', // TODO: passed as param?
     transform: `
       translate(${deltaX}px, ${deltaY}px)
       scale(${deltaW}, ${deltaH})
-    `
+    `,
   }, {
     transformOrigin: 'top left',
-    transform: 'none'
+    transform: 'none',
   }], {
-    duration: 300,
+    duration: 300, // TODO: allow to be passed as param
     easing: 'ease-in-out',
-    fill: 'both'
+    fill: 'both',
   })
 
   return ({
     measure: () => measure(el),
-    animate: cb => animate(el, finalBounds, cb)
+    animate: (stylingFn, newEl) => animate(
+      newEl || el,
+      finalBounds,
+      stylingFn
+    ),
   })
 }
 
 const measure = (el: HTMLElement): IRetVal => ({
   measure: () => measure(el),
-  animate: cb => animate(el, el.getBoundingClientRect(), cb)
+  animate: (stylingFn, newEl) => animate(
+    newEl || el,
+    el.getBoundingClientRect(),
+    stylingFn,
+  )
 })
 
 export {init}
