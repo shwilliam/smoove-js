@@ -29,6 +29,12 @@ Now, to transition the element, simply call the animate method on `myAnim` and p
 myAnim.animate(() => (myEl.style.left = '100px'))
 ```
 
+If you wish to transition to a new element, you can pass this element as the animation option `to`.
+
+```js
+myAnim.animate(showBiggerEl, {to: myBiggerEl})
+```
+
 [![Edit Smoove JS Demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ancient-sun-shefs?fontsize=14&hidenavigation=1&theme=dark)
 
 ## API

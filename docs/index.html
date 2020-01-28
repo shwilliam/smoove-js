@@ -88,6 +88,8 @@
 <span class="hljs-keyword">const</span> myAnim = smoove.init(myEl)</code></pre>
 				<p>Now, to transition the element, simply call the animate method on <code>myAnim</code> and pass a callback that applies the element&#39;s style change(s).</p>
 				<pre><code class="language-js">myAnim.animate(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (myEl.style.left = <span class="hljs-string">'100px'</span>))</code></pre>
+				<p>If you wish to transition to a new element, you can pass this element as the animation option <code>to</code>.</p>
+				<pre><code class="language-js">myAnim.animate(showBiggerEl, {<span class="hljs-attr">to</span>: myBiggerEl})</code></pre>
 				<p><a href="https://codesandbox.io/s/ancient-sun-shefs?fontsize=14&amp;hidenavigation=1&amp;theme=dark"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit Smoove JS Demo"></a></p>
 				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
 					<h2>API</h2>
@@ -145,7 +147,7 @@
 							<td>animationOpts</td>
 							<td>obj</td>
 							<td align="center">❌</td>
-							<td>Object describing transition (see <a href="https://shwilliam.github.io/smoove-js/interfaces/_index_.ianimationopts.html">docs</a>)</td>
+							<td>Object describing transition (see <a href="https://shwilliam.github.io/smoove-js/">docs</a>)</td>
 						</tr>
 				</tbody></table>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
