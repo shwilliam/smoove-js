@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "docs:build": "typedoc --out docs src/index.ts",
     "demo": "parcel ./demo/index.html -d build"
   },
   "repository": {
@@ -27,6 +28,7 @@
     "@typescript-eslint/parser": "^2.17.0",
     "eslint": "^6.8.0",
     "parcel-bundler": "^1.12.4",
+    "typedoc": "^0.16.9",
     "typescript": "^3.7.5"
   }
 }

@@ -53,10 +53,10 @@ Animates target element from bounds (based on previous measure or init) to bound
 
 #### Props
 
-| Name          | Type    | Required | Description                                                                                                             |
-| ------------- | ------- | :------: | ----------------------------------------------------------------------------------------------------------------------- |
-| stylingFn     | funtion |    ✅    | Function that performs style changes                                                                                    |
-| animationOpts | obj     |    ❌    | Object describing transition (see [docs](https://shwilliam.github.io/smoove-js/interfaces/_index_.ianimationopts.html)) |
+| Name          | Type    | Required | Description                                                                       |
+| ------------- | ------- | :------: | --------------------------------------------------------------------------------- |
+| stylingFn     | funtion |    ✅    | Function that performs style changes                                              |
+| animationOpts | obj     |    ❌    | Object describing transition (see [docs](https://shwilliam.github.io/smoove-js/)) |
 
 ## Contributing
 
