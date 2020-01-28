@@ -29,8 +29,14 @@
       padding: 10px;
     }
 
+    .dino-two {
+      position: absolute;
+      top: 80px;
+      left: 40px;
+    }
+
     [role="img"] {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
 
     [data-x-pos="left"] {
@@ -52,6 +58,16 @@
       position: relative;
       top: 50px;
     }
+
+    [data-size="large"] {
+      width: 100px;
+      height: 100px;
+    }
+
+    [data-size="small"] {
+      width: 50px;
+      height: 50px;
+    }
   </style>
 </head>
 <body>
@@ -61,18 +77,31 @@
 
       <button id="btn-dino-x">dino x</button>
       <button id="btn-dino-y">dino y</button>
+      <button id="btn-dino-scale">dino scale</button>
       <button id="btn-container-x">container x</button>
       <button id="btn-both">container and dino</button>
+      <button id="btn-toggle-dino-two">dino #2</button>
     </fieldset>
   </header>
 
   <main class="layout">
-    <div id="dino-container" class="container" data-x-pos="">
-      <div id="dino" class="container" data-x-pos="" data-y-pos="">
+    <div id="dino-container" class="container" data-x-pos="" data-size="small">
+      <div
+        id="dino"
+        class="container" 
+        data-x-pos=""
+        data-y-pos=""
+      >
         <span role="img" aria-label="Dino">
           🦕
         </span>
       </div>
+    </div>
+
+    <div id="dino-two" class="container dino-two">
+      <span role="img" aria-label="Second dino">
+        🦕
+      </span>
     </div>
   </main>
 
